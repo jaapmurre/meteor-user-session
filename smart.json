@@ -1,9 +1,9 @@
 {
-	"name": "user-session",
+	"name": "meteor-user-session",
 	"description": "Provides a UserSession object that works just like Session does, except it's persistent so you can preserve state across devices *and* sessions.",
-	"homepage": "https://github.com/BenjaminRH/meteor-user-session",
-	"author": "Benjamin Harris  (http://benjaminrharris.com)",
+	"homepage": "https://github.com/tkornblit/meteor-user-session",
+	"author": "Tom Kornblit (http://tomkornblit.com)",
 	"version": "0.2.0",
-	"git": "https://github.com/BenjaminRH/meteor-user-session.git",
+	"git": "https://github.com/tkornblit/meteor-user-session.git",
 	"packages": {}
 }

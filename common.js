@@ -28,8 +28,15 @@ UserSession = {
 					return undefined;
 				}
 			}
+
+			var dataType = typeof value;
+
+			if(dataType === "object"){
+				value = JSON.stringify(value);
+			}
+
 			var existing = UserSessionCollection.findOne({ key: key, userId: userId});
-			var sv = { key: key, value: value, userId: userId };
+			var sv = { key: key, value: value, userId: userId, type: dataType };
 			if (existing) UserSessionCollection.update({ _id: existing._id }, { $set: sv });
 			else UserSessionCollection.insert(sv);
 		} else {
@@ -38,6 +45,9 @@ UserSession = {
 		}
 	},
 	get: function (key, userId) {
+
+		var value;
+
 		// Get the value of a user session variable
 		if (Meteor.userId() || Meteor.isServer) {
 			if (typeof userId === 'undefined') {
@@ -48,7 +58,15 @@ UserSession = {
 				}
 			}
 			var existing = UserSessionCollection.findOne({ key: key, userId: userId});
-			if (existing) return existing.value;
+			if (existing) {
+				value = existing.value;
+
+				if(existing.type === "object"){
+					value = JSON.parse(value);
+				}
+
+				return value;
+			}
 		} else {
 			noUserError();
 		}

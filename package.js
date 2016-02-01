@@ -1,7 +1,7 @@
 Package.describe({
-	name: "tkornblit:meteor-user-session",
-	summary: "Provides a UserSession object that works just like Session does, except it's persistent, with object support.",
-	version: "0.2.0"
+	name: "jmoseley:meteor-user-session",
+	summary: "Provides a UserSession object that works just like Session does, except it's persistent, with object support, and available on both client and server.",
+	version: "0.2.1"
 });
 
 var both = ['client', 'server']

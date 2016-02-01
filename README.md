@@ -16,8 +16,7 @@ Provides a `UserSession` object that works just like `Session` does, except it's
 
 ### How to use?
 
-1. Install [meteorite](https://github.com/oortcloud/meteorite)
-2. `mrt add user-session`
+`meteor add jmoseley:meteor-user-session`
 
 
 ### Authors
